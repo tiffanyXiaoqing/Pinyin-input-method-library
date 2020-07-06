@@ -35,8 +35,8 @@ type MyInputMethod struct {
 }
 ```
 前缀树示意图如下，只展示了部分内容：
-![前缀树示意图](https://github.com/tiffanyXiaoqing/Pinyin-input-method-library/blob/master/image/TireTree.png,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3RpYW9qaW5ndGFvMTI5Mw==,size_16,color_FFFFFF,t_70#pic_center)
-这里的前缀树设计的特别之处在于设定字符串数组，用来保存每次经过该节点的文件名。例如，插入"ju.dat"文件，这个文件名会同时保存在j节点以及它的子节点u节点。这样，如果输入j不是⼀个完整的拼音，就可以直接查找它的字符串数组，得到关联的汉字。
+![前缀树示意图](https://github.com/tiffanyXiaoqing/Pinyin-input-method-library/blob/master/image/TireTree.png)
+<br/>这里的前缀树设计的特别之处在于设定字符串数组，用来保存每次经过该节点的文件名。例如，插入"ju.dat"文件，这个文件名会同时保存在j节点以及它的子节点u节点。这样，如果输入j不是⼀个完整的拼音，就可以直接查找它的字符串数组，得到关联的汉字。
 创建好前缀树以后，接下来是查找过程。
 - 第一步：首先看输入字符串是否为一个完整的拼音，即查找文件夹当中有没有拼音对应的本地文件。如果是完整拼音直接跳到第三步。
 - 第二步：不是完整拼音的情况，根据输入拼音查找前缀树节点的字符串数组，它包含所有相关dat文件路径。
